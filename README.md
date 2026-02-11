@@ -35,7 +35,7 @@ Buka file .env, lalu ubah bagian DB_CONNECTION menjadi MySQL dan sesuaikan denga
 Pastikan:
 
 - Database sudah dibuat terlebih dahulu
-- Username & password sesuai dengan konfigurasi MySQL kamu
+- Username & password sesuai dengan konfigurasi MySQL anda
 
 Jika database belum ada, buat terlebih dahulu
 
