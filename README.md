@@ -25,11 +25,11 @@ Generate application key:
 
 Buka file .env, lalu ubah bagian DB_CONNECTION menjadi MySQL dan sesuaikan dengan environment lokal anda:
 
-> DB_CONNECTION=sqlite
-> DB_HOST=127.0.0.1
-> DB_PORT=3306
-> DB_DATABASE=laravel
-> DB_USERNAME=root
+> DB_CONNECTION=sqlite  
+> DB_HOST=127.0.0.1  
+> DB_PORT=3306  
+> DB_DATABASE=laravel  
+> DB_USERNAME=root  
 > DB_PASSWORD=
 
 Pastikan:
