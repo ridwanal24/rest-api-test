@@ -4,67 +4,71 @@ Project ini adalah setup dasar Laravel dengan autentikasi JWT menggunakan php-op
 
 ## 1. Clone Project
 
-git clone https://github.com/ridwanal24/rest-api-test.git
-cd rest-api-test
+> git clone https://github.com/ridwanal24/rest-api-test.git
+> cd rest-api-test
 
 ## 2. Install Dependency
 
-composer install
+> composer install
 
 ## 3. Setup Environment
 
 Rename file .env.example menjadi .env
 
-cp .env.example .env
+> cp .env.example .env
 
 Generate application key:
 
-php artisan key:generate
+> php artisan key:generate
 
 ## 4. Konfigurasi Database
 
 Buka file .env, lalu ubah bagian DB_CONNECTION menjadi MySQL dan sesuaikan dengan environment lokal anda:
 
-DB_CONNECTION=sqlite
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
+> DB_CONNECTION=sqlite
+> DB_HOST=127.0.0.1
+> DB_PORT=3306
+> DB_DATABASE=laravel
+> DB_USERNAME=root
+> DB_PASSWORD=
 
 Pastikan:
 
 - Database sudah dibuat terlebih dahulu
 - Username & password sesuai dengan konfigurasi MySQL kamu
 
-Jika database belum ada, buat terlebih dahulu:
-
-CREATE DATABASE laravel;
+Jika database belum ada, buat terlebih dahulu
 
 ## 5. Setup JWT
 
 Publish config JWT:
 
-php artisan vendor:publish --provider="PHPOpenSourceSaver\\JWTAuth\\Providers\\LaravelServiceProvider"
+> php artisan vendor:publish --provider="PHPOpenSourceSaver\\JWTAuth\\Providers\\LaravelServiceProvider"
 
 Generate JWT Secret:
 
-php artisan jwt:secret
+> php artisan jwt:secret
 
 ## 6. Migrasi Database
 
-php artisan migrate
+> php artisan migrate
 
 ## 7. Seeder (Data Awal)
 
-php artisan db:seed
+> php artisan db:seed
 
 ## 8. Jalankan Server
 
-php artisan serve
+> php artisan serve
 
 Akses aplikasi di:
 
-http://127.0.0.1:8000
+> http://127.0.0.1:8000
 
 Selesai. Project Laravel dengan JWT sudah siap digunakan.
+
+### Api Document
+
+Untuk file document api ada di file
+
+> api-document.yaml

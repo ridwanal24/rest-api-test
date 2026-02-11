@@ -1,0 +1,507 @@
+type: spec.insomnia.rest/5.0
+schema_version: "5.1"
+name: My Design Document
+meta:
+  id: wrk_c3b874fd10b548a5bd1d3bb815ecc488
+  created: 1770780661559
+  modified: 1770780661559
+  description: ""
+collection:
+  - name: Auth
+    meta:
+      id: fld_f4c0ffa521844be080614c9f2b58caf3
+      created: 1770780698460
+      modified: 1770781448192
+      sortKey: -1770780698460
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/auth/login"
+        name: login
+        meta:
+          id: req_e8cc2585572741fab74eb7789fcac7ba
+          created: 1770780702387
+          modified: 1770781531753
+          isPrivate: false
+          description: ""
+          sortKey: -1770780702387
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"test@example.com",
+            	"password":"password"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Users
+    meta:
+      id: fld_fdbe51c844374d5f86f425cedd7f7975
+      created: 1770781539584
+      modified: 1770781539584
+      sortKey: -1770781539584
+      description: ""
+    children:
+      - url: "{{ _.base_url }}/users"
+        name: getAll
+        meta:
+          id: req_a913da738aa74f31a70b4eb6c9e3b6e0
+          created: 1770781544965
+          modified: 1770781861045
+          isPrivate: false
+          description: ""
+          sortKey: -1770781544965
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+          - name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer {{ _.jwt_token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/1"
+        name: get
+        meta:
+          id: req_e32fd1a033b34fb49f1b5e3e398ab7f4
+          created: 1770781583060
+          modified: 1770782407038
+          isPrivate: false
+          description: ""
+          sortKey: -1770781123676
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+          - name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer {{ _.jwt_token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users"
+        name: create
+        meta:
+          id: req_4a3172f68c5e4a99971e95fcb1c4d6bd
+          created: 1770781610213
+          modified: 1770782813456
+          isPrivate: false
+          description: ""
+          sortKey: -1770780913031.5
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"name":"wawa",
+            	"email":"email@g.coms",
+            	"password":"inipassword"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+          - name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer {{ _.jwt_token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/1"
+        name: update
+        meta:
+          id: req_45358f5e90874c348a3e089d43843c3f
+          created: 1770781624077
+          modified: 1770781918756
+          isPrivate: false
+          description: ""
+          sortKey: -1770780807709.25
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+          - name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer {{ _.jwt_token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: "{{ _.base_url }}/users/1"
+        name: delete
+        meta:
+          id: req_92d6f24019274fbdaa38a3acca8442a0
+          created: 1770781640569
+          modified: 1770781932624
+          isPrivate: false
+          description: ""
+          sortKey: -1770780755048.125
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.3.0
+            description: ""
+            disabled: false
+          - name: Accept
+            value: application/json
+            description: ""
+            disabled: false
+          - name: Authorization
+            value: Bearer {{ _.jwt_token }}
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_abef0eada4734462c24263a52de5ba2ee0fc9d12
+    created: 1770780661572
+    modified: 1770781448185
+environments:
+  name: Base Environment
+  meta:
+    id: env_abef0eada4734462c24263a52de5ba2ee0fc9d12
+    created: 1770780661570
+    modified: 1770781525699
+    isPrivate: false
+  data:
+    base_url: http://localhost:8000/api
+    jwt_token: "{% response 'body', 'req_e8cc2585572741fab74eb7789fcac7ba',
+      'b64::JC50b2tlbg==::46b', 'never', 60 %}"
+spec:
+  contents:
+    openapi: 3.1.0
+    info:
+      title: Laravel JWT API
+      version: 1.0.0
+      description: API Laravel dengan JWT. Token dari /auth/login harus dipakai untuk
+        semua endpoint /users.
+    servers:
+      - url: http://127.0.0.1:8000/api
+        description: Local server
+    paths:
+      /auth/login:
+        post:
+          summary: Login user
+          tags:
+            - Auth
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  required:
+                    - email
+                    - password
+                  properties:
+                    email:
+                      type: string
+                      format: email
+                      example: test@example.com
+                    password:
+                      type: string
+                      format: password
+                      example: password
+          responses:
+            "200":
+              description: Login success
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: success
+                      token:
+                        type: string
+                        example: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
+            "401":
+              description: Unauthorized
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      error:
+                        type: string
+                        example: Unauthorized
+      /users:
+        get:
+          summary: Get all users
+          tags:
+            - Users
+          responses:
+            "200":
+              description: List of users
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: success
+                      data:
+                        type: array
+                        items:
+                          $ref: "#/components/schemas/User"
+        post:
+          summary: Create new user
+          tags:
+            - Users
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  required:
+                    - name
+                    - email
+                    - password
+                  properties:
+                    name:
+                      type: string
+                      example: John Doe
+                    email:
+                      type: string
+                      format: email
+                      example: john@example.com
+                    password:
+                      type: string
+                      format: password
+                      example: password
+          responses:
+            "201":
+              description: User created
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: User created
+      /users/{id}:
+        get:
+          summary: Get user by ID
+          tags:
+            - Users
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+          responses:
+            "200":
+              description: User found
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: success
+                      data:
+                        $ref: "#/components/schemas/User"
+            "404":
+              description: User not found
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Not Found
+        put:
+          summary: Update user by ID
+          tags:
+            - Users
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+          requestBody:
+            required: true
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      example: Updated Name
+                    email:
+                      type: string
+                      format: email
+                      example: updated@example.com
+                    password:
+                      type: string
+                      format: password
+                      example: newpassword
+          responses:
+            "200":
+              description: User updated
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: success
+            "404":
+              description: User not found
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: User Not Found
+        delete:
+          summary: Delete user by ID
+          tags:
+            - Users
+          parameters:
+            - name: id
+              in: path
+              required: true
+              schema:
+                type: integer
+          responses:
+            "200":
+              description: User deleted
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: User deleted
+            "404":
+              description: User not found
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: User Not Found
+            "500":
+              description: Failed to delete user
+              content:
+                application/json:
+                  schema:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: User not deleted
+    components:
+      securitySchemes:
+        bearerAuth:
+          type: http
+          scheme: bearer
+          bearerFormat: JWT
+      schemas:
+        User:
+          type: object
+          properties:
+            id:
+              type: integer
+              example: 1
+            name:
+              type: string
+              example: John Doe
+            email:
+              type: string
+              format: email
+              example: john@example.com
+            created_at:
+              type: string
+              format: date-time
+              example: 2026-02-11T10:00:00Z
+  meta:
+    id: spc_b11bfa2df8d544d595b38b59064080eb
+    created: 1770780661567
+    modified: 1770784142372
